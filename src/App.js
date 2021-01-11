@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { BrowserRouter as Router, Route,NavLink as Link,Switch} from 'react-router-dom';
+import Artist from './components/homechild/atrists';
+import Home from './components/home';
+import ArtistDetels from './components/artistDete';
+
+const App=() =>{
+   return(
+    <div> 
+        <Router >
+              <Switch>
+                <Route exact  path='/' component={Home} />
+                <Route   path='/artist/:id' component={ArtistDetels} /> 
+              </Switch>
+        </Router>
     </div>
-  );
+   )
 }
-
 export default App;
